@@ -1,0 +1,54 @@
+owner: aeqiai
+repo: status
+
+sites:
+  - name: Landing Page
+    url: https://aeqi.ai
+    icon: https://aeqi.ai/favicon.ico
+
+  - name: App
+    url: https://app.aeqi.ai/api/health
+    expectedStatusCodes:
+      - 200
+
+  - name: API
+    url: https://app.aeqi.ai/api/auth/mode
+    expectedStatusCodes:
+      - 200
+
+status-website:
+  cname: status.aeqi.ai
+  name: aeqi status
+  theme: light
+  navbar:
+    - title: aeqi
+      href: https://aeqi.ai
+    - title: App
+      href: https://app.aeqi.ai
+  logoUrl: https://aeqi.ai/favicon.ico
+
+  introTitle: "**aeqi** system status"
+  introMessage: Real-time monitoring of aeqi services. Updated every 5 minutes.
+
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "*/5 * * * *"
+  uptime: "*/5 * * * *"
+
+i18n:
+  activeIncidents: Active incidents
+  allSystemsOperational: All systems operational
+  incidentReport: Incident report for $DATE
+  overallUptime: Overall uptime
+  liveStatus: Live status
+  responseTime: Response time
+  ms: ms
+
+commitMessages:
+  statusChange: "$SITE_NAME is $STATUS"
+  readmeRecovery: "$SITE_NAME is back up"
+  readmeDown: "$SITE_NAME is down"
