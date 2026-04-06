@@ -16,7 +16,7 @@ status-website:
   name: aeqi status
   logoUrl: https://aeqi.ai/favicon.svg
   theme: light
-  introTitle: "**aeqi** is {color}."
+  introTitle: "**aeqi** system status"
   introMessage: Real-time monitoring of aeqi services. Updated every 5 minutes.
   navbar:
     - title: aeqi
