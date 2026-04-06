@@ -2,26 +2,184 @@ owner: aeqiai
 repo: aeqi-status
 
 sites:
-  - name: Landing Page
+  - name: Platform
+    url: https://app.aeqi.ai/api/health
+    expectedStatusCodes:
+      - 200
+
+  - name: API
+    url: https://app.aeqi.ai/api/auth/mode
+    expectedStatusCodes:
+      - 200
+
+  - name: Website
     url: https://aeqi.ai
 
-  - name: App
-    url: https://app.aeqi.ai/api/health
-
-  - name: API Auth
-    url: https://app.aeqi.ai/api/auth/mode
+  - name: Analytics
+    url: https://analytics.aeqi.ai
+    expectedStatusCodes:
+      - 200
 
 status-website:
   cname: status.aeqi.ai
-  name: aeqi status
+  name: aeqi
   logoUrl: https://aeqi.ai/favicon.svg
+  favicon: https://aeqi.ai/favicon.svg
   theme: light
-  introTitle: "**aeqi** system status"
-  introMessage: Real-time monitoring of aeqi services. Updated every 5 minutes.
+  introTitle: "All systems operational"
+  introMessage: "Infrastructure status for [aeqi.ai](https://aeqi.ai). Monitored every 5 minutes."
   navbar:
-    - title: aeqi
+    - title: Home
       href: https://aeqi.ai
     - title: App
       href: https://app.aeqi.ai
-    - title: GitHub
-      href: https://github.com/aeqiai/aeqi
+    - title: Docs
+      href: https://aeqi.ai/docs
+  css: |
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --color-text: rgba(0, 0, 0, 0.85);
+      --color-text-secondary: rgba(0, 0, 0, 0.5);
+      --color-text-muted: rgba(0, 0, 0, 0.3);
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-bg: #ffffff;
+      --color-success: #22c55e;
+    }
+
+    * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important; }
+
+    body {
+      background: var(--color-bg) !important;
+      color: var(--color-text) !important;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px !important;
+      padding: 0 24px !important;
+    }
+
+    /* Nav */
+    nav {
+      border-bottom: 1px solid var(--color-border) !important;
+      background: var(--color-bg) !important;
+      padding: 16px 0 !important;
+    }
+    nav .logo div {
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.03em !important;
+      color: var(--color-text) !important;
+    }
+    nav .logo img {
+      width: 20px !important;
+      height: 20px !important;
+    }
+    nav ul a {
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: var(--color-text-secondary) !important;
+      text-decoration: none !important;
+    }
+    nav ul a:hover {
+      color: var(--color-text) !important;
+    }
+
+    /* Header */
+    header h1 {
+      font-size: 24px !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.025em !important;
+      color: var(--color-text) !important;
+      margin-top: 48px !important;
+    }
+    header .lead {
+      font-size: 14px !important;
+      color: var(--color-text-secondary) !important;
+      margin-bottom: 40px !important;
+    }
+
+    /* Status indicator */
+    .success {
+      background: rgba(34, 197, 94, 0.08) !important;
+      border: 1px solid rgba(34, 197, 94, 0.15) !important;
+      border-radius: 10px !important;
+      padding: 14px 18px !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: #16a34a !important;
+    }
+
+    /* Section headings */
+    h2 {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.01em !important;
+      color: var(--color-text) !important;
+      text-transform: none !important;
+      margin-top: 32px !important;
+    }
+
+    /* Tabs */
+    form label {
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      color: var(--color-text-muted) !important;
+      border-radius: 6px !important;
+      padding: 4px 10px !important;
+    }
+    form input:checked + label {
+      background: rgba(0, 0, 0, 0.06) !important;
+      color: var(--color-text) !important;
+    }
+
+    /* Site cards */
+    .site-status {
+      border: 1px solid var(--color-border) !important;
+      border-radius: 10px !important;
+      padding: 16px 20px !important;
+      margin-bottom: 12px !important;
+      background: var(--color-bg) !important;
+    }
+    .site-status:hover {
+      border-color: rgba(0, 0, 0, 0.15) !important;
+    }
+    .site-status .name {
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: var(--color-text) !important;
+    }
+    .site-status .status {
+      font-size: 12px !important;
+      font-weight: 500 !important;
+    }
+    .site-status .uptime,
+    .site-status .response-time {
+      font-size: 12px !important;
+      color: var(--color-text-secondary) !important;
+    }
+
+    /* Graphs */
+    section svg {
+      border-radius: 8px !important;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--color-border) !important;
+      margin-top: 48px !important;
+      padding: 24px 0 !important;
+    }
+    footer p {
+      font-size: 12px !important;
+      color: var(--color-text-muted) !important;
+    }
+    footer a {
+      color: var(--color-text-secondary) !important;
+    }
+
+  customHeadHtml: |
+    <meta name="description" content="Real-time system status for aeqi.ai — autonomous company infrastructure." />
+    <meta property="og:title" content="aeqi status" />
+    <meta property="og:description" content="Real-time system status for aeqi.ai" />
