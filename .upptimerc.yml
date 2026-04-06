@@ -1,0 +1,27 @@
+owner: aeqiai
+repo: aeqi-status
+
+sites:
+  - name: Landing Page
+    url: https://aeqi.ai
+
+  - name: App
+    url: https://app.aeqi.ai/api/health
+
+  - name: API Auth
+    url: https://app.aeqi.ai/api/auth/mode
+
+status-website:
+  cname: status.aeqi.ai
+  name: aeqi status
+  logoUrl: https://aeqi.ai/favicon.svg
+  theme: light
+  introTitle: "**aeqi** is {color}."
+  introMessage: Real-time monitoring of aeqi services. Updated every 5 minutes.
+  navbar:
+    - title: aeqi
+      href: https://aeqi.ai
+    - title: App
+      href: https://app.aeqi.ai
+    - title: GitHub
+      href: https://github.com/aeqiai/aeqi

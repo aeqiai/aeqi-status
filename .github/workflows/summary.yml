@@ -1,12 +1,10 @@
-name: Static Site CI
+name: Summary CI
 on:
   schedule:
-    - cron: "0 1 * * *"
-  repository_dispatch:
-    types: [static_site]
+    - cron: "0 0 * * *"
   workflow_dispatch:
 jobs:
-  release:
+  summary:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
@@ -16,8 +14,4 @@ jobs:
       - uses: upptime/uptime-monitor@v1.41.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          command: site
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site/status-page/__sapper__/export/
+          command: summary
