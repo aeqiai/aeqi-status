@@ -58,17 +58,17 @@
     "url": "https://analytics.aeqi.ai",
     "icon": "https://icons.duckduckgo.com/ip3/analytics.aeqi.ai.ico",
     "slug": "analytics",
-    "status": "down",
+    "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 470,
-    "timeDay": 470,
-    "timeWeek": 470,
-    "timeMonth": 470,
-    "timeYear": 470,
+    "time": 513,
+    "timeDay": 513,
+    "timeWeek": 513,
+    "timeMonth": 513,
+    "timeYear": 513,
     "dailyMinutesDown": {}
   }
 ]
